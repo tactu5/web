@@ -1,0 +1,50 @@
+{% extends 'base/base.html' %}
+
+
+{% block content %}
+
+    {% from "_macro.html" import render_field %}
+    {% from "_macro.html" import render_clases %}
+
+    <form name="SentMessage" method="POST", class="ask">
+        {{ render_field(forms.datos, class='form-control') }}
+        {{ render_field(forms.punto, class='form-control') }}
+        <button type="submit">Enviar</button>
+    </form>
+
+    <hr>
+
+    <!-- tabla -->
+    <br>
+
+    
+    <table class="titulos">
+        <tr class="titles">
+            <td class="tab">CLASES</td>
+            <td class="tab">LI</td>
+            <td class="tab">LS</td>
+            <td class="tab">LRI</td>
+            <td class="tab">LRS</td>
+            <td class="tab">Xi</td>
+            <td class="tab">fi</td>
+            <td class="tab">hi</td>
+            <td class="tab">Fi</td>
+            <td class="tab">Hi</td>
+            <td class="tab">Xi * fi</td>
+            <td class="tab">|Xi - X|</td>
+            <td class="tab">D * fi</td>
+            <td class="tab">(Xi - X)^2</td>
+            <td class="tab">D^2 * fi</td>
+        </tr>
+        {{ render_clases(mi_diccionario) }}
+    </table>
+
+    <p> {{ _amplitud_de_clase }} </p>
+    <p> {{ _rango }} </p>
+    <p> {{ _dm }} </p>
+    <p> {{ _varianza }} </p>
+    <p> {{ _media }} </p>
+    
+
+
+{% endblock %}

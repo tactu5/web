@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <title>Board House</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css' ) }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Agbalumo&family=Lobster&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+</head>
+<body>
+    <header>
+        <h1 class="t" >Tabla de Frecuencia
+        <p class="t2">
+            ¿Cómo funciona la tabla?
+            <br>
+            <br>
+            Introduce los datos de tu interés en el recuadro de 'DATOS', separa cada dato con una coma (,) o un espacio.
+            Posteriormente escribe la cantidad de decimales que quieres que se manejen durante el calculo (se recomienda que sea la cantidad de digitos decimales que tienen la mayoria de los numeros).
+            Una vez que introduzcas todos los datos presiona el botón de empezar y obtendras una Tabla de Distribucion de Frecuencias con base en los datos que introdujiste.  
+        </p>
+        </h1>
+
+        <hr>
+    </header>
+    <div class="cont">
+        <h2 class="d"> Tabla de distribución de frecuencia</h2>
+
+        
+    
+
+        {% block content %}
+        {% endblock %} 
+    
+    </div>
+
+    <hr>
+
+    <section>
+        <p class="take"><b>CLASES:</b>  Son subconjuntos de datos en los que se dividen los datos totales de la tabla.</p>
+        <p class="take"><b>Límite inferior [LI]:</b>  Es el valor menor de cada intervalo. A partir de la segunda clase se obtiene sumándole el la amplitud de clase al límite inferior anterior.</p>
+        <P class="take"><b>Límite superior [LS]:</b>  Es el número mayor de cada intervalo. Para obtener el primer dato de este apartado se debe aplicar “AMPLITUD DE CLASE - 1” a partir del segundo dato ya no aplica esto y se suma la cantidad completa.</P>
+        <P class="take"><b>Límite real inferior [LRI]:</b>  Es el valor menor de cada intervalo pero el límite real no presenta discontinuidad entre sus intervalos.</P>
+        <P class="take"><b>Límite real superior [LRS]:</b>  Es el valor mayor de cada intervalo pero el límite real no presenta discontinuidad entre sus intervalos.</P>
+        <P class="take"><b>Marca de clase [Xi]:</b>  Es el valor medio de cada clase; Se obtiene sumando el límite real superior y el límite real inferior y dividiéndolo entre dos.</P>
+        <p class="take"><b>Frecuencia absoluta [fi]:</b>  Es la cantidad de datos total por clase; Se obtiene contando la cantidad de datos que están siendo abordados por el intervalo (Límite inferior-límite superior).</p>
+        <p class="take"><b>Frecuencia relativa [hi]:</b>  Es la representación de manera porcentual de la cantidad individual de datos por clase; Se obtiene multiplicando la frecuencia absoluta de la clase por cien y dividiéndola entre el total de datos.</p>
+        <p class="take"><b>Frecuencia absoluta acumulada [Fi]:</b>  Es la sumatoria de todos los datos de la frecuencia absoluta; Se obtiene individualmente en cada clase, sumando la frecuencia absoluta anterior más la frecuencia absoluta de la clase. </p>
+        <P class="take"><b>Frecuencia relativa acumulada [Hi]:</b>  Es la sumatoria de todos los porcentajes de frecuencia relativa; Se obtiene individualmente en cada clase, sumando la frecuencia relativa anterior más la frecuencia absoluta de la clase.</P>
+        <P class="take"><b>Media aritmética [Xi * fi]:</b>  Conocida comúnmente como promedio se calcula sumando todas las mediciones y dividiéndolas entre el número total de datos por cada clase.</P>
+        <p class="take"><b>Desviación media [Xi - X]:</b>  Es la media aritmética de los valores absolutos de las desviaciones de los datos de las clases individuales respecto a la media aritmética. Entendido de forma sencilla, es el promedio de las desviaciones de las clases individuales.</p>
+        <p class="take"><b>D * f:</b>  Es el producto de la desviación media (Xi-X̅) y fi (frecuencia absoluta).</p>
+        <p class="take"><b>(Xi - X)<sup>2</sup>:</b>  Es la exageración de la desviación media, para lograr esto se eleva al cuadrado.</p>
+        <p class="take"><b>D<sup>2</sup> * fi:</b>  Es el producto de la exageración de la desviación media y la frecuencia absoluta.</p>
+        <p class="take"><b>Amplitud de clase:</b>  Es la amplitud de cada clase; Se obtiene dividiendo el rango entre el número de clases. </p>
+        <p class="take"><b>Rango:</b>  Son todos los datos que se encuentran en un intervalo; Se obtiene restando al dato mayor el dato menor de cada conjunto de datos.</p>
+        <p class="take"><b>Desviación media:</b>  Es la media aritmética de los valores absolutos de las desviaciones medias de todos los datos respecto a la media aritmética.</p>
+        <p class="take"><b>Varianza:</b>  Es la media aritmética de los cuadrados de las desviaciones.</p>
+        <p class="take"><b>Media:</b>  Es el número más representativo de un conjunto de números (promedio).</p>
+    </section>
+    
+    <footer>
+    </footer>
+</body>
+</html>

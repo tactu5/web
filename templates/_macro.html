@@ -1,0 +1,36 @@
+{% macro render_field(field) %}
+
+    <td>{{ field.label }}</td>
+    <dd>{{ field(**kwargs)|safe }}</dd>
+
+    {% if field.errors %}
+        <ul>
+            {% for error in field.errors %}
+            <p> {{ error }} </p>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    
+{% endmacro %}
+
+{% macro render_clases(mi_diccionario) %}
+    {% for clave, valor in mi_diccionario.items() %}
+        <tr class="ans">
+            <td>{{clave}}</td>
+            <td>{{valor[0]}}</td>
+            <td>{{valor[1]}}</td>
+            <td>{{valor[2]}}</td>
+            <td>{{valor[3]}}</td>
+            <td>{{valor[4]}}</td>
+            <td>{{valor[5]}}</td>
+            <td>{{valor[6]}}</td>
+            <td>{{valor[7]}}</td>
+            <td>{{valor[8]}}</td>
+            <td>{{valor[9]}}</td>
+            <td>{{valor[10]}}</td>
+            <td>{{valor[11]}}</td>
+            <td>{{valor[12]}}</td>
+            <td>{{valor[13]}}</td>
+        </tr>
+    {% endfor %}
+{% endmacro %}
